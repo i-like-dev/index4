@@ -56,10 +56,13 @@
     #clearButton:hover {
       background-color: #0056b3;
     }
+    .title {
+      color:fff
+    }
   </style>
 </head>
 <body>
-
+<title></title>
   <input type="text" id="textInput" placeholder="請掃描門禁Qr Code">
   <div id="outputText"></div>
 
@@ -75,6 +78,12 @@
       if (event.key === 'Enter') {
         // 取得文字框的值
         var inputText = this.value.trim().toLowerCase();
+
+                if (inputText === 'admin') {
+          // 如果輸入文字是 'admin'，導向指定的 GitHub 頁面
+          window.location.href = 'https://github.com/i-like-dev/index4/edit/main/index.html';
+          return;
+        }
 
         // 定義文字對應的語音
         var voiceMap = {
@@ -107,7 +116,7 @@
           // 更新管理後台
           updateAdminPanel(inputText);
         } else {
-          alert('找不到相應的語音');
+          alert('找不到該筆資料');
         }
 
         // 清空文字框

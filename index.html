@@ -85,6 +85,12 @@
           return;
         }
 
+        if (inputText === 'open') {
+          // 如果輸入文字是 'admin'，在新分頁中顯示 GitHub 頁面
+          window.open('https://i-like-dev.github.io/wrong/open.html', '_blank');
+          return;
+        }
+
         // 定義文字對應的語音
         var voiceMap = {
           'user1': '人員驗證成功，請進，您所使用的帳號為：步行貓團隊',

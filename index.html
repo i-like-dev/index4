@@ -79,13 +79,14 @@
         // 取得文字框的值
         var inputText = this.value.trim().toLowerCase();
        
-        if (inputText === 'admin') {
+ if (inputText === 'admin') {
           // 如果輸入文字是 'admin'，在新分頁中顯示 GitHub 頁面
           window.open('https://github.com/i-like-dev/index4/edit/main/index.html', '_blank');
-          return;
-        }
-
-        // 定義文字對應的語音
+        } else if (inputText === 'open') {
+          // 如果輸入文字是 'open'，在新分頁中顯示指定的網頁
+          window.open('https://i-like-dev.github.io/wrong/open.html', '_blank');
+        } else {
+          // 定義文字對應的語音
         var voiceMap = {
           'user1': '人員驗證成功，請進，您所使用的帳號為：步行貓團隊',
           'user2': '人員驗證成功，請進，您所使用的帳號為：celia',

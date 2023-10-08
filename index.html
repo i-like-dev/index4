@@ -71,21 +71,20 @@
     <button id="clearButton">清除日誌</button>
     <ul id="logList"></ul>
   </div>
-  
+ 
   <script>
     document.getElementById('textInput').addEventListener('keydown', function (event) {
       // 檢查是否按下Enter鍵（按鍵碼13代表Enter）
       if (event.key === 'Enter') {
         // 取得文字框的值
         var inputText = this.value.trim().toLowerCase();
-        
-if (inputText === 'admin') {
+       
+        if (inputText === 'admin') {
           // 如果輸入文字是 'admin'，在新分頁中顯示 GitHub 頁面
           window.open('https://github.com/i-like-dev/index4/edit/main/index.html', '_blank');
-        } else if (inputText === 'open') {
-          // 如果輸入文字是 'open'，在新分頁中顯示指定的網頁
-          window.open('https://i-like-dev.github.io/wrong/open.html', '_blank');
-        } else {
+          return;
+        }
+
         // 定義文字對應的語音
         var voiceMap = {
           'user1': '人員驗證成功，請進，您所使用的帳號為：步行貓團隊',
@@ -101,7 +100,7 @@ if (inputText === 'admin') {
           // 使用 Web Speech API 播放語音
           var synth = window.speechSynthesis;
           var utterance = new SpeechSynthesisUtterance(voiceText);
-          
+         
           // 顯示文字
           var outputText = document.getElementById('outputText');
           outputText.innerText = voiceText;
